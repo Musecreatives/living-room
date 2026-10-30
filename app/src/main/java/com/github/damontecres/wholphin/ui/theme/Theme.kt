@@ -9,6 +9,7 @@ import com.github.damontecres.wholphin.ui.theme.colors.BlueThemeColors
 import com.github.damontecres.wholphin.ui.theme.colors.BoldBlueThemeColors
 import com.github.damontecres.wholphin.ui.theme.colors.BrownThemeColors
 import com.github.damontecres.wholphin.ui.theme.colors.GreenThemeColors
+import com.github.damontecres.wholphin.ui.theme.colors.LivingRoomThemeColors
 import com.github.damontecres.wholphin.ui.theme.colors.OledThemeColors
 import com.github.damontecres.wholphin.ui.theme.colors.OrangeThemeColors
 import com.github.damontecres.wholphin.ui.theme.colors.PurpleThemeColors
@@ -27,6 +28,7 @@ fun getThemeColors(appThemeColors: AppThemeColors): ThemeColors =
         AppThemeColors.BOLD_BLUE -> BoldBlueThemeColors
         AppThemeColors.RED -> RedThemeColors
         AppThemeColors.BROWN -> BrownThemeColors
+        AppThemeColors.LIVING_ROOM -> LivingRoomThemeColors
         AppThemeColors.UNRECOGNIZED -> PurpleThemeColors
     }
 
@@ -50,7 +52,7 @@ fun WholphinTheme(
         ) {
             MaterialTheme(
                 colorScheme = colorScheme,
-                typography = AppTypography,
+                typography = if (appThemeColors == AppThemeColors.LIVING_ROOM) LivingRoomTypography else AppTypography,
                 content = content,
             )
         }
