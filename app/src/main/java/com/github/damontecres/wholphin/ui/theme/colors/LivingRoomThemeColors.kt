@@ -5,25 +5,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.tv.material3.darkColorScheme
 import com.github.damontecres.wholphin.ui.theme.ThemeColors
 
-// Living Room: near-black ink scale with one cyan accent, matching jellyfin-tv/prototype.
-// Dark only; the light schemes reuse the dark values.
+// ShaddaiTV (enum name kept as LIVING_ROOM so saved preferences still match): broadcast ink and the
+// TV-tag blue from shaddai-enterprises/brand/shaddaitv/tokens.css. Dark only; light schemes reuse it.
 val LivingRoomThemeColors =
     object : ThemeColors {
-        val ink0 = Color(0xFF06080C)
-        val ink1 = Color(0xFF0C1017)
-        val ink2 = Color(0xFF141A24)
-        val ink3 = Color(0xFF1D2531)
-        val line = Color(0xFF2A3341)
-        val fg = Color(0xFFEEF2F7)
-        val fg2 = Color(0xFFB3BDCB)
-        val fg3 = Color(0xFF8691A2)
-        val accent = Color(0xFF2FB0E4)
-        val accentInk = Color(0xFF04141C)
-        val accentDeep = Color(0xFF0B5F80)
+        val ink0 = Color(0xFF0A1622) // --stv-ink
+        val ink1 = Color(0xFF0F1D2C)
+        val ink2 = Color(0xFF152738)
+        val ink3 = Color(0xFF1D3247)
+        val line = Color(0xFF2B4058)
+        val fg = Color(0xFFF7F9FC) // --stv-paper
+        val fg2 = Color(0xFFC9D4DF)
+        val fg3 = Color(0xFF9FB0C2) // --stv-muted-on-ink
+        val accent = Color(0xFF2E75C4) // --stv-blue
+        val accentInk = Color(0xFFFFFFFF)
+        val accentDeep = Color(0xFF1B4A7A) // --stv-blue-deep
         val good = Color(0xFF62D39D)
         val goodInk = Color(0xFF06140D)
-        val rec = Color(0xFFEF6B63)
-        val recInk = Color(0xFF2A0604)
+        val rec = Color(0xFFD42D28) // --stv-live
+        val recInk = Color(0xFFFFFFFF)
 
         override val darkSchemeMaterial: ColorScheme =
             androidx.compose.material3.darkColorScheme(

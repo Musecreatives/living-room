@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name" translatable="false">Living Room</string>
-    <string name="app_name_long" translatable="false">Living Room</string>
+    <string name="app_name" translatable="false">ShaddaiTV</string>
+    <string name="app_name_long" translatable="false">ShaddaiTV</string>
     <string name="search_authority" translatable="false">com.livingroom.tv.search</string>
-    <string name="voice_search_label" translatable="false">Living Room voice search</string>
 
     <string name="about">About</string>
     <string name="active_recordings">Active Recordings</string>
@@ -605,8 +604,8 @@
     <string name="content_scale_fill">Fill</string>
     <string name="content_scale_fill_width">Fill width</string>
     <string name="content_scale_fill_height">Fill height</string>
-    <string name="display_preset_default">Living Room Default</string>
-    <string name="display_preset_compact">Living Room Compact</string>
+    <string name="display_preset_default">ShaddaiTV Default</string>
+    <string name="display_preset_compact">ShaddaiTV Compact</string>
     <string name="display_preset_series_thumb">Series Thumb images</string>
     <string name="display_preset_episode_thumbnails">Episode Thumbnail images</string>
 
@@ -629,7 +628,7 @@
     <string name="bold_blue">Bold Blue</string>
     <string name="black">Black</string>
     <string name="brown">Brown</string>
-    <string name="living_room_theme">Living Room</string>
+    <string name="living_room_theme">ShaddaiTV</string>
     <string-array name="app_theme_colors">
         <item>@string/purple</item>
         <item>@string/blue</item>
@@ -828,7 +827,7 @@
     <string name="select_all">Select all</string>
     <string name="separate_types">Separate types</string>
     <string name="prefer_logos">Prefer showing logos for titles</string>
-    <string name="updated_toast">Living Room updated to %s</string>
+    <string name="updated_toast">ShaddaiTV updated to %s</string>
     <string name="remove_continue_watching">Remove from continue watching</string>
     <string name="remove_next_up">Remove series from next up</string>
     <string name="view_removed_next_up">View series removed from next up</string>

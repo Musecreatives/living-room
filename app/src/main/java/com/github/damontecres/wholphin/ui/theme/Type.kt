@@ -21,10 +21,16 @@ private fun variableFamily(
     },
 )
 
-// Living Room theme: Sora for display/headline/title, Figtree for body/label, JetBrains Mono for numbers.
-val SoraFamily = variableFamily(R.font.sora_variable, FontWeight.Medium, FontWeight.SemiBold, FontWeight.Bold)
-val FigtreeFamily =
-    variableFamily(R.font.figtree_variable, FontWeight.Normal, FontWeight.Medium, FontWeight.SemiBold, FontWeight.Bold)
+// ShaddaiTV theme: Manrope (the brand typeface) for everything, JetBrains Mono for numbers.
+val ManropeFamily =
+    variableFamily(
+        R.font.manrope_variable,
+        FontWeight.Normal,
+        FontWeight.Medium,
+        FontWeight.SemiBold,
+        FontWeight.Bold,
+        FontWeight.ExtraBold,
+    )
 val MonoFamily = variableFamily(R.font.jetbrains_mono_variable, FontWeight.Normal, FontWeight.Medium)
 
 private fun TextStyle.with(
@@ -35,20 +41,20 @@ private fun TextStyle.with(
 val LivingRoomTypography =
     AppTypography.run {
         Typography(
-            displayLarge = displayLarge.with(SoraFamily, FontWeight.Bold),
-            displayMedium = displayMedium.with(SoraFamily, FontWeight.Bold),
-            displaySmall = displaySmall.with(SoraFamily, FontWeight.Bold),
-            headlineLarge = headlineLarge.with(SoraFamily, FontWeight.Bold),
-            headlineMedium = headlineMedium.with(SoraFamily, FontWeight.SemiBold),
-            headlineSmall = headlineSmall.with(SoraFamily, FontWeight.SemiBold),
-            titleLarge = titleLarge.with(SoraFamily, FontWeight.SemiBold),
-            titleMedium = titleMedium.with(FigtreeFamily, FontWeight.SemiBold),
-            titleSmall = titleSmall.with(FigtreeFamily, FontWeight.SemiBold),
-            bodyLarge = bodyLarge.with(FigtreeFamily, FontWeight.Normal),
-            bodyMedium = bodyMedium.with(FigtreeFamily, FontWeight.Normal),
-            bodySmall = bodySmall.with(FigtreeFamily, FontWeight.Normal),
-            labelLarge = labelLarge.with(FigtreeFamily, FontWeight.SemiBold),
-            labelMedium = labelMedium.with(FigtreeFamily, FontWeight.Medium),
-            labelSmall = labelSmall.with(FigtreeFamily, FontWeight.Medium),
+            displayLarge = displayLarge.with(ManropeFamily, FontWeight.Bold),
+            displayMedium = displayMedium.with(ManropeFamily, FontWeight.Bold),
+            displaySmall = displaySmall.with(ManropeFamily, FontWeight.Bold),
+            headlineLarge = headlineLarge.with(ManropeFamily, FontWeight.Bold),
+            headlineMedium = headlineMedium.with(ManropeFamily, FontWeight.SemiBold),
+            headlineSmall = headlineSmall.with(ManropeFamily, FontWeight.SemiBold),
+            titleLarge = titleLarge.with(ManropeFamily, FontWeight.SemiBold),
+            titleMedium = titleMedium.with(ManropeFamily, FontWeight.SemiBold),
+            titleSmall = titleSmall.with(ManropeFamily, FontWeight.SemiBold),
+            bodyLarge = bodyLarge.with(ManropeFamily, FontWeight.Normal),
+            bodyMedium = bodyMedium.with(ManropeFamily, FontWeight.Normal),
+            bodySmall = bodySmall.with(ManropeFamily, FontWeight.Normal),
+            labelLarge = labelLarge.with(ManropeFamily, FontWeight.SemiBold),
+            labelMedium = labelMedium.with(ManropeFamily, FontWeight.Medium),
+            labelSmall = labelSmall.with(ManropeFamily, FontWeight.Medium),
         )
     }
