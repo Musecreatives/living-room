@@ -52,6 +52,9 @@ class SwitchSeerrViewModel
                         _state.update { it.copy(loading = LoadingState.Success) }
                     }
                 }
+            } else {
+                // No server plugin to pre-fill from: show the manual form instead of spinning forever
+                _state.update { it.copy(loading = LoadingState.Success) }
             }
         }
 
