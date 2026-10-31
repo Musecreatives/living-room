@@ -5,9 +5,7 @@ package com.github.damontecres.wholphin.ui.nav
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -161,16 +159,16 @@ fun Backdrop(
                         .transitionFactory(CrossFadeFactory(crossfadeDuration))
                         .build(),
                 contentDescription = null,
-                contentScale = ContentScale.Fit,
+                // Living Room: full-bleed backdrop under left + bottom scrims (prototype .bd/.scrim)
+                contentScale = ContentScale.Crop,
                 alignment = Alignment.TopEnd,
                 modifier =
                     Modifier
-                        .align(Alignment.TopEnd)
-                        .fillMaxHeight(.7f)
-                        .fillMaxWidth(.7f)
+                        .fillMaxSize()
                         .graphicsLayer(compositingStrategy = CompositingStrategy.Offscreen)
                         .drawWithContent {
                             val start = if (isRtl) size.width else 0f
+                            val end = if (isRtl) 0f else size.width
                             drawContent()
                             if (drawerIsOpen) {
                                 drawRect(
@@ -192,23 +190,25 @@ fun Backdrop(
                                     blendMode = BlendMode.Multiply,
                                 )
                             }
+                            val ink = baseBackgroundColor
                             drawRect(
                                 brush =
                                     Brush.horizontalGradient(
-                                        colors = listOf(Color.Transparent, Color.Black),
+                                        0f to ink.copy(alpha = .95f),
+                                        .38f to ink.copy(alpha = .72f),
+                                        .72f to ink.copy(alpha = .08f),
+                                        1f to ink.copy(alpha = .08f),
                                         startX = start,
-                                        endX = size.width * 0.6f,
+                                        endX = end,
                                     ),
-                                blendMode = BlendMode.DstIn,
                             )
                             drawRect(
                                 brush =
                                     Brush.verticalGradient(
-                                        colors = listOf(Color.Black, Color.Transparent),
-                                        startY = 0f,
-                                        endY = size.height,
+                                        .34f to ink.copy(alpha = 0f),
+                                        .58f to ink.copy(alpha = .55f),
+                                        .94f to ink,
                                     ),
-                                blendMode = BlendMode.DstIn,
                             )
                         },
             )

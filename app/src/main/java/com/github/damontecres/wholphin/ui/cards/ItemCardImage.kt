@@ -266,16 +266,7 @@ fun ItemCardImageOverlay(
         }
 
         if (watchedPercent != null && watchedPercent > 0 && watchedPercent < 100) {
-            Box(
-                modifier =
-                    Modifier
-                        .align(Alignment.BottomStart)
-                        .background(
-                            MaterialTheme.colorScheme.tertiary,
-                        ).clip(RectangleShape)
-                        .height(Cards.playedPercentHeight)
-                        .fillMaxWidth((watchedPercent / 100.0).toFloat()),
-            )
+            PlayedProgressBar(watchedPercent, Modifier.align(Alignment.BottomCenter))
         }
     }
 }
