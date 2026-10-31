@@ -78,6 +78,20 @@
                 android:resource="@xml/searchable" />
         </activity>
 
+        <!-- Optional handler for the remote's mic button: speech prompt, then Living Room search -->
+        <activity
+            android:name=".VoiceAssistActivity"
+            android:exported="true"
+            android:label="@string/voice_search_label"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VOICE_ASSIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <provider
             android:name=".services.GlobalSearchProvider"
             android:authorities="${applicationId}.search"

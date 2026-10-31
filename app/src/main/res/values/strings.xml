@@ -2,6 +2,7 @@
     <string name="app_name" translatable="false">Living Room</string>
     <string name="app_name_long" translatable="false">Living Room</string>
     <string name="search_authority" translatable="false">com.livingroom.tv.search</string>
+    <string name="voice_search_label" translatable="false">Living Room voice search</string>
 
     <string name="about">About</string>
     <string name="active_recordings">Active Recordings</string>
