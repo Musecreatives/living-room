@@ -10,7 +10,7 @@ class TracksChangedListener(
     val audioIndex: Int?,
     val subtitleIndex: Int?,
     val source: MediaSourceInfo,
-    val onFailure: () -> Unit,
+    val onFailure: (TrackSelectionResult) -> Unit,
 ) : Player.Listener {
     override fun onTracksChanged(tracks: Tracks) {
         Timber.v("onTracksChanged: $tracks")
@@ -34,7 +34,7 @@ class TracksChangedListener(
                     "Failed to select tracks, falling back to transcoding: %s",
                     result,
                 )
-                onFailure.invoke()
+                onFailure.invoke(result)
             }
         }
     }

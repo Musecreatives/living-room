@@ -848,7 +848,7 @@ class PlaybackViewModel
                             mediaItem,
                             positionMs,
                         )
-                        val onFailure: () -> Unit = {
+                        val onFailure: (TrackSelectionResult) -> Unit = { result ->
                             if (player is MpvPlayer && externalSubtitle != null) {
                                 // MpvPlayer may change tracks more than once to add external subtitles
                                 trackChangeListener?.let { player.addListener(it) }
@@ -861,7 +861,8 @@ class PlaybackViewModel
                                         subtitleIndex = subtitleIndex,
                                         positionMs = positionMs,
                                         enableDirectPlay = false,
-                                        enableDirectStream = true,
+                                        // Direct stream copies the audio as-is, so an undecodable track stays silent
+                                        enableDirectStream = result.audio != TrackSelected.UNSUPPORTED,
                                     )
                                 }
                             }
