@@ -47,8 +47,10 @@ fun WatchedIconBackground(): Color =
         AppThemeColors.BOLD_BLUE,
         AppThemeColors.RED,
         AppThemeColors.BROWN,
-        AppThemeColors.LIVING_ROOM,
         -> MaterialTheme.colorScheme.border.copy(alpha = 1f)
+
+        // border is near-white here, which hides the white check
+        AppThemeColors.LIVING_ROOM -> MaterialTheme.colorScheme.primary
 
         AppThemeColors.OLED_BLACK -> MaterialTheme.colorScheme.secondaryContainer
     }
